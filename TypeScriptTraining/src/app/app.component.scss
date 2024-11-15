@@ -1,0 +1,8 @@
+@mixin dflex($jc:center,$ai:center,$g:0) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+}
+
+$background-color : black;

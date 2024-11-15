@@ -1,0 +1,27 @@
+@mixin dflex($jc:center,$ai:center,$g:0) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+}
+
+$background-color : black;
+
+section {
+    @include dflex($g:70px);
+    flex-direction: column;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: $background-color;
+    color: whitesmoke;
+
+    >h1 {
+        font-size: 72px;
+        text-align: center;
+    }
+
+    >img {
+        aspect-ratio: 1/1;
+        width: 150px;
+    }
+}
