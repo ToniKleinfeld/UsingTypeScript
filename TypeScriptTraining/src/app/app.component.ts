@@ -2,7 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
+import { Pkw } from './interfaces/pkw.interface';
 
+// interface Pkw {                         // über dem component kann ein interface erstellt werden, was wie eine typ schablone für objekte verwendet werden kann   -- einfach hinter dem objektnamen :interfacename angeben.
+//   readonly marke: string | number;
+//   baujahr: number;
+//   unfallwagen?: boolean;
+// }     // kann auch komplett ausgelagert werden in --> interface --> pkw.interface.ts  , als export --> in import eintragen! siehe oben !
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -47,11 +53,16 @@ person: {                 // so wird in einem object die types festgelegt!
   alter: 36,
 }
 
+pkw: Pkw = {
+  marke: 'Volvo',
+  baujahr: 1988,
+}
+
 constructor() {
   this.theTypeless = 'string';
   this.theArray;
   this.add(1,1);      // wenn hier jetzt ein string eingeführt wird erscheint eine fehler meldung! , da in der function number festgesetzt wurden!
-
+  this.pkw.unfallwagen = true;  
 }
 
 add(a:number ,b:number):number {    // number nach der klammer definiert hier den return wert! nicht die variablen in der klammer
